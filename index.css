@@ -33,10 +33,12 @@
   width: 200px;
   padding: 5px;
   margin: 5px;
+  border-radius: 10px;
 }
 
 .res-card > img {
   height: 150px;
+  border-radius: 10px;
 }
 
 /* .res-card > img:hover {
@@ -49,11 +51,11 @@
   box-shadow: 5px 7px #88888896;
 }
 
-.search {
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  border: 1px solid black;
+.filter-btn {
+  margin: 10px;
+  /* padding: 10px;
+  border: 1px solid black; */
+  cursor: pointer;
 }
 
 .res-logo {
