@@ -1,6 +1,7 @@
 .logo {
-  width: 100px;
-  height: auto;
+  /* width: 100px; */
+  height: 90px;
+  object-fit: contain;
   border-radius: 50%;
   margin: 10px;
   padding: 10px;
@@ -9,7 +10,10 @@
 .header {
   display: flex;
   justify-content: space-between;
-  border: 1px solid black;
+  align-items: center;
+  padding: 14px 40px;
+  background-color: #fffaf5;
+  box-shadow: 0 4px 14px rgba(54, 33, 15, 0.08);
 }
 
 .nav-items > ul {
@@ -17,11 +21,23 @@
   padding: 0px 20px;
   list-style: none;
   font-size: 22px;
+  font-weight: 600;
+  gap: 28px;
+  margin: 0px 15px;
+  padding: 0;
+  color: #36210f
 }
 
 .nav-items > ul > li {
-  padding: 10px;
-  margin: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #36210f;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+}
+.nav-items > ul > li:hover {
+  color: #ec5600;
 }
 
 .res-container {
