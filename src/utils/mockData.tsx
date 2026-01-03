@@ -1304,7 +1304,174 @@ const resList = [
         type: "WEBLINK"
         },
         widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
-    }
+    },
+    {info: {
+id: "149743",
+name: "Creme Castle - Cakes And Desserts",
+cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2025/12/29/6a835536-fd11-48f3-815f-2fc43b6c0f52_149743.JPG",
+locality: "Gautam Buddha Nagar",
+areaName: "Sector 68",
+costForTwo: "₹400 for two",
+cuisines: [
+"Bakery",
+"Desserts"
+],
+avgRating: 4.6,
+parentId: "567576",
+avgRatingString: "4.6",
+totalRatingsString: "2.6K+",
+sla: {
+deliveryTime: 28,
+lastMileTravel: 7.7,
+serviceability: "SERVICEABLE",
+slaString: "25-30 mins",
+lastMileTravelString: "7.7 km",
+iconType: "ICON_TYPE_EMPTY"
+},
+availability: {
+nextCloseTime: "2026-01-04 02:00:00",
+opened: true
+},
+badges: { },
+isOpen: true,
+type: "F",
+badgesV2: {
+entityBadges: {
+imageBased: { },
+textBased: { },
+textExtendedBadges: { }
+}
+},
+aggregatedDiscountInfoV3: {
+header: "ITEMS",
+subHeader: "AT ₹174"
+},
+orderabilityCommunication: {
+title: { },
+subTitle: { },
+message: { },
+customIcon: { }
+},
+differentiatedUi: {
+displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+differentiatedUiMediaDetails: {
+mediaType: "ADS_MEDIA_ENUM_IMAGE",
+lottie: { },
+video: { }
+}
+},
+reviewsSummary: { },
+displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+restaurantOfferPresentationInfo: { },
+externalRatings: {
+aggregatedRating: {
+rating: "--"
+}
+},
+ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+},
+analytics: {
+context: "seo-data-22738f67-52c2-4e73-ba04-6cf1a7058928"
+},
+cta: {
+link: "https://www.swiggy.com/city/noida/creme-castle-cakes-and-desserts-gautam-buddha-nagar-sector-68-rest149743",
+text: "RESTAURANT_MENU",
+type: "WEBLINK"
+},
+widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+},
+{
+info: {
+id: "371106",
+name: "Veer Ji Malai Chaap Wale",
+cloudinaryImageId: "aukg0jbxki3wbqcdxo9g",
+locality: "Gaur City 2",
+areaName: "Gaur City 2",
+costForTwo: "₹450 for two",
+cuisines: [
+"Indian",
+"Chinese"
+],
+avgRating: 3.9,
+parentId: "12056",
+avgRatingString: "3.9",
+totalRatingsString: "1.4K+",
+sla: {
+deliveryTime: 20,
+lastMileTravel: 0.3,
+serviceability: "SERVICEABLE",
+slaString: "20-25 mins",
+lastMileTravelString: "0.3 km",
+iconType: "ICON_TYPE_EMPTY"
+},
+availability: {
+nextCloseTime: "2026-01-04 02:00:00",
+opened: true
+},
+badges: {
+imageBadges: [
+{
+imageId: "android/static-assets/icons/big_rx.png",
+description: "bolt!"
+}
+]
+},
+isOpen: true,
+aggregatedDiscountInfoV2: { },
+type: "F",
+badgesV2: {
+entityBadges: {
+imageBased: {
+badgeObject: [
+{
+attributes: {
+description: "bolt!",
+imageId: "android/static-assets/icons/big_rx.png"
+}
+}
+]
+},
+textBased: { },
+textExtendedBadges: { }
+}
+},
+orderabilityCommunication: {
+title: { },
+subTitle: { },
+message: { },
+customIcon: { }
+},
+differentiatedUi: {
+displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+differentiatedUiMediaDetails: {
+mediaType: "ADS_MEDIA_ENUM_IMAGE",
+lottie: { },
+video: { }
+}
+},
+reviewsSummary: { },
+displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+restaurantOfferPresentationInfo: { },
+externalRatings: {
+aggregatedRating: {
+rating: "2.9",
+ratingCount: "175"
+},
+source: "GOOGLE",
+sourceIconImageId: "v1704440323/google_ratings/rating_google_tag"
+},
+ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+},
+analytics: {
+context: "seo-data-22738f67-52c2-4e73-ba04-6cf1a7058928"
+},
+cta: {
+link: "https://www.swiggy.com/city/noida/veer-ji-malai-chaap-wale-gaur-city-2-rest371106",
+text: "RESTAURANT_MENU",
+type: "WEBLINK"
+},
+widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+}
 ]
 
 export default resList;
