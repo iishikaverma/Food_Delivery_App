@@ -1,11 +1,12 @@
 import RestaurantCard from "./RestaurantCard";
-import resList from "../utils/mockData";
+import Shimmer from "./Shimmer";
+import { Restaurant } from "../utils/types";
 import { useState, useEffect } from "react";
 
 const Body = () => {
 
     // Local State Variable - Super powerful variable
-    const [listOfRestaurants, setListOfRestaurants] = useState(resList)
+    const [listOfRestaurants, setListOfRestaurants] = useState<Restaurant[]>([])
     // Normal JS Variable
     // let listOfRestaurants = [];
 
@@ -19,16 +20,19 @@ const Body = () => {
         );
 
         const json = await data.json();
-        console.log(json);
+        console.log(json)
+        setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
-    return(
+    return listOfRestaurants.length === 0 ? (
+        <Shimmer/>
+    ) : (
         <div className="body">
             <div className="filter">
                 <button className="filter-btn" onClick={() => {
-                    // resList = resList.filter(res => res.info)
+                    // re>sList = resList.filter(res => res.info)
                     const filteredList = listOfRestaurants.filter(
-                        (res) => res.info.avgRating > 4.2
+                        (res) => res?.info?.avgRating > 4
                     );
                     setListOfRestaurants(filteredList);
                 }}

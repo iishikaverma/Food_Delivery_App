@@ -98,3 +98,19 @@
 .res-logo {
   width: 100%;
 }
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.shimmer-card {
+  width: 240px;
+  height: 430px;
+  padding: 12px;
+  background-color: #fffaf6;
+  margin: 5px;
+  border-radius: 15px;
+}

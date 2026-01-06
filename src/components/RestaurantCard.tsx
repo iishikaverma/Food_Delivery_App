@@ -1,17 +1,8 @@
 import { CDN_URL } from "../utils/constants";
+import { Restaurant } from "../utils/types";
+
 type RestaurantCardProps = {
-  resData: {
-    info: {
-      name: string;
-      cloudinaryImageId: string;
-      cuisines: string[];
-      avgRating: number;
-      costForTwo: string;
-      sla: {
-        deliveryTime: number;
-      };
-    };
-  };
+  resData: Restaurant;
 };
 
 const RestaurantCard = (props:RestaurantCardProps) => {
