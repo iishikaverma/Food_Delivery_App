@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
     let [btnNameReact, setBtnNameReact] = useState("Login");
+    console.log("Header rendered")
 
+    //If no dependency array => useEffect = called on every render.
+    useEffect(() => {
+        console.log("useEffect called")
+    })
     return(
         <div className="header">
             <div className="logo-container">
