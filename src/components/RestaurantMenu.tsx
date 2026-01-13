@@ -6,36 +6,60 @@ import { MENU_API } from "../utils/constants";
 const RestaurantMenu = () => {
 
     const[ resInfo, setResInfo ]= useState<any>(null);
-    const{ resId } = useParams();
+    const{ resID } = useParams<any>();
+    console.log("resId from params:", resID);
+
 
     useEffect(() => {
         fetchMenu();
     },[]);
 
     const fetchMenu = async () => {
-        const data = await fetch(MENU_API + resId);
+        const data  = await fetch( MENU_API + resID );
         const json = await data.json();
-        
+        console.log(json);
         setResInfo(json.data);
     };
 
-    const { name, cuisines, costForTwo } = resInfo?.cards[2]?.card?.card?.info;
+    if (!resInfo) return <Shimmer/>;
 
-    return resInfo === null ? (
-        <Shimmer/>
-    ) : (
+    const info = resInfo?.cards?.[2]?.card?.card?.info;
+    if (!info) return <Shimmer/>;
+
+    const { name, cuisines=[], costForTwo } = info;
+
+    const categories =
+    resInfo?.cards
+    ?.find((c: any) => c?.groupedCard)?.groupedCard?.cardGroupMap?.REGULAR?.cards
+    ?.filter(
+      (c: any) =>
+        c?.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    ) || [];
+
+    const itemCards = categories.flatMap(
+    (c: any) => c?.card?.card?.itemCards || []
+    );
+    console.log("itemCards:", itemCards);
+
+
+
+    return (
         <div className="menu">
             <h1>{name}</h1>
-            <h3>{cuisines.join(", ")}</h3>
-            <h3>{costForTwo}</h3>
+            <p>{cuisines.join(", ")} - ₹{costForTwo / 100}</p>
             <h2>Menu</h2>
             <ul>
-                <li>Menu Item 1</li>
-                <li>Menu Item 2</li>
-                <li>Menu Item 3</li> 
+                {itemCards.map((item: any) => 
+                    <li key={item.card.info.id}>
+                        {item?.card?.info?.name} - {"Rs-"} 
+                            {item?.card?.info?.price / 100}
+                    </li>
+                    )
+                }
             </ul>
         </div>
     )
-}
+};
 
 export default RestaurantMenu;
