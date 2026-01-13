@@ -50,8 +50,8 @@ const RestaurantMenu = () => {
             <p>{cuisines.join(", ")} - ₹{costForTwo / 100}</p>
             <h2>Menu</h2>
             <ul>
-                {itemCards.map((item: any) => 
-                    <li key={item.card.info.id}>
+                {itemCards.map((item: any, index: number) => 
+                    <li key={`${item.card.info.id}-${index}`}>
                         {item?.card?.info?.name} - {"Rs-"} 
                             {item?.card?.info?.price / 100}
                     </li>
