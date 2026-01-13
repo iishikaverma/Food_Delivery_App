@@ -191,3 +191,8 @@
   transform: translateY(0);
   box-shadow: 0 3px 8px rgba(212, 112, 45, 0.35);
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
