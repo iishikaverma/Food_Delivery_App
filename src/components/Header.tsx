@@ -32,6 +32,7 @@ const Header = () => {
                     <li><Link to="/">HOME</Link></li>
                     <li><Link to="/about"> ABOUT US </Link></li>
                     <li><Link to="/contact">CONTACT US</Link></li>
+                    <li><Link to="/grocery">GROCERY</Link></li>                    
                     <li>CART</li>
                     <button 
                     className="login" 
