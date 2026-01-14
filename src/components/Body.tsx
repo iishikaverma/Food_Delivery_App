@@ -3,6 +3,7 @@ import Shimmer from "./Shimmer";
 import { Restaurant } from "../utils/types";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
 
@@ -13,8 +14,6 @@ const Body = () => {
 
     const [searchText, setSearchText] = useState<string>("")
     const [filteredRestaurant, setFilteredRestaurants] = useState<Restaurant[]>([])
-
-    console.log("Body Rendered")
 
     useEffect(()=>{
         fetchData()
@@ -28,6 +27,16 @@ const Body = () => {
         const json = await data.json();
         setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    };
+
+    const onlineStatus = useOnlineStatus();
+
+    if (onlineStatus === false) {
+        return (
+            <h2>
+                Oops!! Please check your internet connection.
+            </h2>
+        );
     }
 
     return listOfRestaurants.length === 0 ? (
@@ -42,7 +51,6 @@ const Body = () => {
                         setSearchText(e.target.value);
                     }}/>
                     <button onClick={() => {
-                        console.log(searchText);
 
                         const filteredRestaurant = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
 
