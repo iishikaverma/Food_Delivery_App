@@ -11,3 +11,18 @@ export interface Restaurant {
     };
   };
 }
+
+export interface UserProps {
+  name: string;
+  location: string;
+};
+
+export interface UserState {
+  userInfo: UserInfo
+};
+
+interface UserInfo {
+  name: string;
+  location: string;
+  avatar_url: string;
+}
