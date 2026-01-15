@@ -17,31 +17,28 @@ const Header = () => {
     const onlineStatus = useOnlineStatus();
 
     return(
-        <div className="flex">
+        <div className="flex justify-between items-center px-10 py-3.5 bg-[#fffaf5] shadow-[0_4px_14px_rgba(54,33,15,0.08)]">
             <div className="logo-container">
                 <img
-                    className ="w-[95px]"
+                    className ="w-25 h-25 object-contain rounded-full m-2.5 p-2.5"
                     src={new URL("../../assets/Cravory.png", import.meta.url).toString()}
                     alt="Cravory logo"
                 />
 
             </div>
-            <div className="bg-yellow-300 text-red-600 text-2xl p-4 border-4 border-blue-600">
-                Tailwind is DEFINITELY working
-            </div>
-
-
 
             <div className="nav-items">
-                <ul>
-                    <li>Online Status:  {onlineStatus ? "🟢" : "🔴"}</li>
-                    <li><Link to="/">HOME</Link></li>
-                    <li><Link to="/about"> ABOUT US </Link></li>
-                    <li><Link to="/contact">CONTACT US</Link></li>
-                    <li><Link to="/grocery">GROCERY</Link></li>                    
-                    <li>CART</li>
+                <ul className="flex items-center px-0 py-5 list-none text-xl font-semibold gap-7 mx-0 my-3.5 p-0 text-[#36210f]">
+                    <li className="text-base font-semibold text-[#36210f] relative">Online Status:  {onlineStatus ? "🟢" : "🔴"}</li>
+                    <li className="text-base font-semibold text-[#36210f] cursor-pointer relative transition-colors_0.2_ease hover:text-[#ec5600]"><Link to="/">HOME</Link></li>
+                    <li className="text-base font-semibold text-[#36210f] cursor-pointer relative transition-colors_0.2_ease hover:text-[#ec5600]"><Link to="/about"> ABOUT US </Link></li>
+                    <li className="text-base font-semibold text-[#36210f] cursor-pointer relative transition-colors_0.2_ease hover:text-[#ec5600]"><Link to="/contact">CONTACT US</Link></li>
+                    <li className="text-base font-semibold text-[#36210f] cursor-pointer relative transition-colors_0.2_ease hover:text-[#ec5600]"><Link to="/grocery">GROCERY</Link></li>                    
+                    <li className="text-base font-semibold text-[#36210f] cursor-pointer relative transition-colors_0.2_ease hover:text-[#ec5600]">CART</li>
                     <button 
-                    className="login" 
+                    className="px-4.5 py-2.5 font-semibold border border-[#36210f] cursor-pointer rounded-[20px] bg-transparent text-[#ec5600] text-[14px] transition-all duration-250 ease-in-out 
+                                hover:bg-[#36210f] hover:text-white hover:shadow-[0_6px_16px_rgba(212,112,45,0.35)] hover:-translate-y-0.5    active:translate-y-0
+                                active:shadow-[0_3px_8px_rgba(212,112,45,0.35)]" 
                     onClick={()=>{
                         btnNameReact === "Login"
                         ? setBtnNameReact("Logout")
