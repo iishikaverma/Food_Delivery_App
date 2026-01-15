@@ -17,15 +17,21 @@ const Header = () => {
     const onlineStatus = useOnlineStatus();
 
     return(
-        <div className="header">
+        <div className="flex">
             <div className="logo-container">
                 <img
-                    className="logo"
+                    className ="w-[95px]"
                     src={new URL("../../assets/Cravory.png", import.meta.url).toString()}
                     alt="Cravory logo"
                 />
 
             </div>
+            <div className="bg-yellow-300 text-red-600 text-2xl p-4 border-4 border-blue-600">
+                Tailwind is DEFINITELY working
+            </div>
+
+
+
             <div className="nav-items">
                 <ul>
                     <li>Online Status:  {onlineStatus ? "🟢" : "🔴"}</li>

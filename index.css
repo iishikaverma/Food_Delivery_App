@@ -1,5 +1,9 @@
-.logo {
-  /* width: 100px; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .logo {
+  width: 100px;
   height: 90px;
   object-fit: contain;
   border-radius: 50%;
@@ -201,4 +205,4 @@ a {
   padding: 10px;
   border: 1px solid black;
   border-radius: 20px;
-}
+} */
