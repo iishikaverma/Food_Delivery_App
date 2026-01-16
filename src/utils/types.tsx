@@ -10,6 +10,10 @@ export interface Restaurant {
       deliveryTime: number;
     };
     totalRatingsString: string;
+    aggregatedDiscountInfoV3: {
+      header: string;
+      subHeader: string;
+    }
   };
 }
 

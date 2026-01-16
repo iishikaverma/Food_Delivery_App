@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withOffer } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Restaurant } from "../utils/types";
 import { useState, useEffect } from "react";
@@ -11,9 +11,11 @@ const Body = () => {
     const [listOfRestaurants, setListOfRestaurants] = useState<Restaurant[]>([])
     // Normal JS Variable
     // let listOfRestaurants = [];
-
+    console.log(listOfRestaurants)
     const [searchText, setSearchText] = useState<string>("")
     const [filteredRestaurant, setFilteredRestaurants] = useState<Restaurant[]>([])
+
+    const RestaurantOffer = withOffer(RestaurantCard);
 
     useEffect(()=>{
         fetchData()
@@ -85,7 +87,13 @@ const Body = () => {
             <div className="flex flex-wrap gap-5 justify-center">
                 {
                     filteredRestaurant.map((restaurant) => (
-                        <Link key={restaurant.info.id} to = {"/restaurants/" + restaurant.info.id}><RestaurantCard resData={restaurant}/></Link>)
+                        <Link key={restaurant.info.id} 
+                        to = {"/restaurants/" + restaurant.info.id}>
+                            {restaurant.info.aggregatedDiscountInfoV3 ?(<RestaurantOffer resData={restaurant}/>
+                            ):(
+                                <RestaurantCard resData={restaurant}/>)}
+                        </Link>
+                        )
                     )
                 }
             </div>
