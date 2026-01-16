@@ -11,11 +11,8 @@ const Body = () => {
     const [listOfRestaurants, setListOfRestaurants] = useState<Restaurant[]>([])
     // Normal JS Variable
     // let listOfRestaurants = [];
-    console.log(listOfRestaurants)
     const [searchText, setSearchText] = useState<string>("")
     const [filteredRestaurant, setFilteredRestaurants] = useState<Restaurant[]>([])
-
-    const RestaurantOffer = withOffer(RestaurantCard);
 
     useEffect(()=>{
         fetchData()
@@ -89,9 +86,7 @@ const Body = () => {
                     filteredRestaurant.map((restaurant) => (
                         <Link key={restaurant.info.id} 
                         to = {"/restaurants/" + restaurant.info.id}>
-                            {restaurant.info.aggregatedDiscountInfoV3 ?(<RestaurantOffer resData={restaurant}/>
-                            ):(
-                                <RestaurantCard resData={restaurant}/>)}
+                            {<RestaurantCard resData={restaurant}/>}
                         </Link>
                         )
                     )

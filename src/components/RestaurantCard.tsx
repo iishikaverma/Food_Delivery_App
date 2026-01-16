@@ -33,10 +33,8 @@ export const withOffer = (RestaurantCard: any) => {
         return (
             <div className="relative">
                 <label className="absolute z-10 top-4 left-2 bg-amber-100 text-amber-800 rounded-e-lg px-3 py-1 text-base font-semibold shadow">
-                    {offer.header}
                     {offer.header ? ` - ${offer.subHeader} ` :""}
                 </label>
-                <RestaurantCard {...props} />
             </div>
         );
     }
