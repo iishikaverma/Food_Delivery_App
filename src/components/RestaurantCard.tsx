@@ -8,7 +8,7 @@ type RestaurantCardProps = {
 const RestaurantCard = (props:RestaurantCardProps) => {
     const {resData} = props;
 
-    const {cloudinaryImageId, costForTwo, name, cuisines, avgRating, sla} = resData?.info
+    const {cloudinaryImageId, costForTwo, name, cuisines, avgRating, sla, externalRatings } = resData?.info
     return (
         <div className="w-64 h-100 p-3 bg-[#fffaf6] m-1.25 rounded-2xl transition-all duration-200 ease-in-out 
                         hover:-translate-y-1.5 hover:shadow-[0_14px_30px_rgba(54,33,15,0.25)] cursor-pointer">
@@ -19,7 +19,7 @@ const RestaurantCard = (props:RestaurantCardProps) => {
             />
             <h3 className="font-bold py-2 ">{name}</h3>
             <h4>{cuisines.join(", ")}</h4>
-            <h4>{avgRating} stars</h4>
+            <h4>{avgRating} stars ({externalRatings.aggregatedRating.ratingCount})</h4>
             <h4>{costForTwo}</h4>
             <h4>{sla.deliveryTime} minutes</h4>
         </div>
