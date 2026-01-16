@@ -9,11 +9,7 @@ export interface Restaurant {
     sla: {
       deliveryTime: number;
     };
-    externalRatings: {
-      aggregatedRating: {
-        ratingCount : number;
-      }
-    }
+    totalRatingsString: string;
   };
 }
 
