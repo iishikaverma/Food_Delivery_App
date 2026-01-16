@@ -10,7 +10,7 @@ const RestaurantCard = (props:RestaurantCardProps) => {
 
     const {costForTwo, name, cuisines, avgRating, sla, totalRatingsString } = resData?.info
     return (
-        <div className=" w-64 h-100 p-3 bg-[#fffaf6] m-1.25 rounded-2xl transition-all duration-200 ease-in-out 
+        <div className="relative w-64 h-100 p-3 bg-[#fffaf6] m-1.25 rounded-2xl transition-all duration-200 ease-in-out 
                         hover:-translate-y-1.5 hover:shadow-[0_14px_30px_rgba(54,33,15,0.25)] cursor-pointer">
             <img
                 className="w-full h-40 object-cover rounded-xl" 
@@ -29,12 +29,13 @@ const RestaurantCard = (props:RestaurantCardProps) => {
 export const withOffer = (RestaurantCard: any) => {
     return (props:RestaurantCardProps)=>{
         const {resData} = props;
-        const offer = resData?.info.aggregatedDiscountInfoV3;
+        const offer = resData?.info?.aggregatedDiscountInfoV3;
         return (
             <div className="relative">
                 <label className="absolute z-10 top-4 left-2 bg-amber-100 text-amber-800 rounded-e-lg px-3 py-1 text-base font-semibold shadow">
-                    {offer.header ? ` - ${offer.subHeader} ` :""}
+                    {offer.header} {offer.header ? ` - ${offer.subHeader} ` :""}
                 </label>
+                <RestaurantCard {...props} />
             </div>
         );
     }
