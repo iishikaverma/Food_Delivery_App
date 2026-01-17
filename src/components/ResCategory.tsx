@@ -11,7 +11,7 @@ const RestaurantCategory = ({ data}: MenuCategoryProps) => {
                 <span className="font-bold text-lg text-[#36210f]">
                     {data?.title} {" "}
                     ({data?.itemCards?.length})</span>
-                <span className="text-sm">▼</span>
+                <span className="text-xl">⌄</span>
             </div>
             <ItemList items = {data?.itemCards || []}/>
         </div>
