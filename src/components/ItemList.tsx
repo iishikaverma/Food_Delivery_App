@@ -1,0 +1,37 @@
+import { ItemListProps } from "../utils/types";
+import { CDN_URL } from "../utils/constants";
+
+const ItemList = ({items}:ItemListProps) => {
+    console.log(items);
+    return (
+        <div className="space-y-4">
+            {items.map((item:any) => (
+            <div key={item?.card?.info?.id} 
+             className="flex rounded-2xl items-start gap-4 p-4 border-b border-[#e7d7c8]
+                       hover:bg-[#fff3ea] transition-colors duration-150">
+                
+                <img className="h-26 w-26 object-cover rounded-lg shrink-0"
+                src={CDN_URL + item.card.info.imageId}/>
+
+                <div className="flex-1">
+                    <div className="flex justify-between items-start">
+                        <h3 className="font-semibold text-sm text-[#36210f]">
+                            {item.card.info.name}
+                        </h3>
+
+                        <span className="font-semibold text-sm text-[#ec5600]"> 
+                            ₹{item.card.info.price 
+                            ? item.card.info.price/100
+                            :item.card.info.defaultPrice/100}
+                        </span>
+                    </div>
+                    <p className=" mt-3 text-xs text-[#7a5a44] line-clamp-2">{item.card.info.description}</p>
+                </div>
+            </div>
+        ))}
+           
+        </div>
+    )
+}
+
+export default ItemList;

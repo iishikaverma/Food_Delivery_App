@@ -31,3 +31,29 @@ interface UserInfo {
   location: string;
   avatar_url: string;
 }
+
+export interface MenuCategoryProps {
+  key:any;
+  data: MenuCategoryData;
+}
+
+export interface MenuCategoryData {
+  title?: string;
+  itemCards?: any[];
+}
+
+export interface ItemListProps {
+  items: MenuItems[];
+}
+
+interface MenuItems {
+  card: {
+    info: {
+      id: string;
+      name: string;
+      price: number;
+      imageId?: string;
+      description: string;
+    };
+  };
+}
