@@ -32,7 +32,7 @@ const ItemList = ({items}:ItemListProps) => {
                             :item.card.info.defaultPrice/100}
                         </span>
                         <button className=" mt-4 items-center border border-[#ec5600] px-4 py-1 text-xs font-semibold
-                            rounded-full text-[#ec5600] bg-white
+                            rounded-full text-[#ec5600] bg-white cursor-pointer
                             hover:bg-[#ec5600] hover:text-white active:scale-95 transition-all duration-150">
                             Add
                         </button>

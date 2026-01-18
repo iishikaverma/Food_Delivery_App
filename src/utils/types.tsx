@@ -35,10 +35,7 @@ interface UserInfo {
 export interface MenuCategoryProps {
   key:any;
   data: MenuCategoryData;
-  // index: number;
-  // showItems: boolean;
-  // setShowIndex: React.Dispatch<React.SetStateAction<number | null>>;
-
+  showItems: boolean;
 }
 
 export interface MenuCategoryData {
