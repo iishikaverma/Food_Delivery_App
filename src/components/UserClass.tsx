@@ -27,11 +27,11 @@ class UserClass extends React.Component<UserProps, UserState> {
     }
 
     componentDidUpdate() {
-        console.log("Component did Update")
+        //console.log("Component did Update")
     }
 
     componentWillUnmount() {
-        console.log('Component Will Unmount');
+        //console.log('Component Will Unmount');
     }
 
     render() {

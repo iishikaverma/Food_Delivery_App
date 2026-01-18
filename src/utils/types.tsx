@@ -36,6 +36,8 @@ export interface MenuCategoryProps {
   key:any;
   data: MenuCategoryData;
   showItems: boolean;
+  index: number;
+  setShowIndex: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
 export interface MenuCategoryData {

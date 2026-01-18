@@ -1,14 +1,11 @@
-import { useState } from "react";
 import { MenuCategoryProps } from "../utils/types";
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({ data}: MenuCategoryProps) => {
-    
-    const [showItems, setShowItems] = useState(false);
+const RestaurantCategory = ({ data, showItems, setShowIndex, index}: MenuCategoryProps) => {
 
     const handleClick = () => {
-        setShowItems(!showItems);
-    }
+        setShowIndex(index);
+    };
     
     return(
         <div className="w-1/2 mx-auto my-4 bg-[#fffaf6] rounded-xl shadow-[0_6px_18px_rgba(54,33,15,0.12)] p-4">

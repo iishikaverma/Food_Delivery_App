@@ -1,8 +1,7 @@
-import { ItemListProps } from "../utils/types";
 import { CDN_URL } from "../utils/constants";
+import { ItemListProps } from "../utils/types";
 
 const ItemList = ({items}:ItemListProps) => {
-    console.log(items);
     return (
         <div className="space-y-4">
             {items.map((item:any) => (
