@@ -60,3 +60,14 @@ interface MenuItems {
     };
   };
 }
+
+interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  imageId?: string;
+}
+
+ export interface CartState {
+  items: CartItem[];
+}
