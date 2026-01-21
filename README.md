@@ -16,3 +16,8 @@ Footer
     -Links
     -Address
     -Contacts
+
+# Types of Testing (Developer):
+    - Unit Testing
+    - Integration Testing
+    - e2e testing (End to End Testing)
