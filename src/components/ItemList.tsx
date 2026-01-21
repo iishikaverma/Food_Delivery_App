@@ -1,7 +1,15 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
 import { ItemListProps } from "../utils/types";
+import { addItem } from "../utils/cartSlice";
 
 const ItemList = ({items}:ItemListProps) => {
+
+    const dispatch = useDispatch();    
+    const handleAddItem = (items:string) => {
+        dispatch(addItem(items))
+    }
+
     return (
         <div className="space-y-4">
             {items.map((item:any) => (
@@ -32,7 +40,8 @@ const ItemList = ({items}:ItemListProps) => {
                         </span>
                         <button className=" mt-4 items-center border border-[#ec5600] px-4 py-1 text-xs font-semibold
                             rounded-full text-[#ec5600] bg-white cursor-pointer
-                            hover:bg-[#ec5600] hover:text-white active:scale-95 transition-all duration-150">
+                            hover:bg-[#ec5600] hover:text-white active:scale-95 transition-all duration-150"
+                            onClick={() => handleAddItem(item)}>
                             Add
                         </button>
                     </div>

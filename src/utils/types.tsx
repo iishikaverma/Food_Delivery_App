@@ -40,7 +40,7 @@ export interface MenuCategoryProps {
   setShowIndex: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
-export interface MenuCategoryData {
+interface MenuCategoryData {
   title?: string;
   itemCards?: any[];
 }
