@@ -41,7 +41,7 @@ const Body = () => {
         );
     }
 
-    const {loggedInUser , setUserName} = useContext(UserContext);
+    // const {loggedInUser , setUserName} = useContext(UserContext);
 
     return listOfRestaurants.length === 0 ? (
         <Shimmer/>
@@ -85,12 +85,12 @@ const Body = () => {
                 >
                     Top Rated Restaurants
                 </button>
-                <div>
+                {/* <div>
                     <label>UserName: </label>
                     <input className="border border-black p-2 "
                     value={loggedInUser}
                     onChange ={(e) => setUserName(e.target.value)}/>
-                </div>
+                </div> */}
             </div>
             <div className="flex flex-wrap gap-5 justify-center">
                 {

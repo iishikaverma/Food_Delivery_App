@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext";
+// import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 
 const Header = () => {
@@ -18,7 +18,7 @@ const Header = () => {
 
     const onlineStatus = useOnlineStatus();
 
-    const {loggedInUser} = useContext(UserContext);
+    // const {loggedInUser} = useContext(UserContext);
 
     const cartItems = useSelector((store: any) => store.cart.items)
     console.log(cartItems)
@@ -66,7 +66,7 @@ const Header = () => {
                             {btnNameReact}
                     </button>
 
-                    <li className="text-base font-bold text-[#36210f]">Hi, {loggedInUser}</li>
+                    {/* <li className="text-base font-bold text-[#36210f]">Hi, {loggedInUser}</li> */}
                 </ul>
             </div>
         </div>
